@@ -8,8 +8,8 @@ a [GraphLab-Create's deep
 learning](https://dato.com/learn/userguide/#neural-net-classifier) which is
 based on CXXNet.
 
-This attempt is a modified version of https://github.com/srikris/datascience-bowl
-which achieves a Public Leaderboard score of 0.97.
+This attempt is a modified version of https://github.com/srikris/datascience-bowl.
+https://github.com/srikris/datascience-bowl achieved a Public Leaderboard score of 0.97.
 
 * **Setup time**: ~40 mins
 * **Train and submit creation time**: ~3 hours 40 mins on a GRID K520 GPU
