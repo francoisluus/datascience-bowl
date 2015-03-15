@@ -1,3 +1,4 @@
+scikit-image
 ipython==2.3.0
 http://static.dato.com/files/graphlab-create-1.3.gpu.tar.gz
 Pillow==2.7.0

@@ -8,10 +8,10 @@ a [GraphLab-Create's deep
 learning](https://dato.com/learn/userguide/#neural-net-classifier) which is
 based on CXXNet. 
 
-* **Setup time**: ~2 mins
-* **Train time**: ~20 mins on a GPU (it could take much longer on a CPU)
-* **Validation score**: 0.76
-* **Leaderboard score**: 0.97
+* **Setup time**: ~40 mins
+* **Train and submit creation time**: ~3 hours 40 mins on a GRID K520 GPU
+* **Validation score**: 0.84 (72%)
+* **Leaderboard score**: 0.85
 
 
 Solution
@@ -45,21 +45,43 @@ pip install -r requirements-gpu.pip
 Data
 -----
 Let us assume that you have the data downloaded into two folders called train 
-and test. You can do that as follows:
+and test. You can do that as follows: (You will probably need a cookie file,
+so just download it from the website.)
 
 ```
 wget https://www.kaggle.com/c/datasciencebowl/download/train.zip
 wget https://www.kaggle.com/c/datasciencebowl/download/test.zip
+wget http://www.kaggle.com/c/datasciencebowl/download/sampleSubmission.csv.zip
 unzip train.zip
 unzip test.zip
+unzip sampleSubmission.csv.zip
+```
+
+Morphological dataset
+-----
+Use the grayscale images in train/ and test/ to produce RGB images that
+consist of 3 channels, the original grayscale image and two basic morphological
+operations on the original images, like tophat and bottomhat.
+
+Use gen_train.py and gen_test.py to create a new dataset, change the folder
+locations to match your train/ and test/ parent directory.
+
+Train dataset creation: 5 minutes
+```
+python gen_train.py
+```
+
+Test dataset creation: 35 minutes
+```
+python gen_test.py
 ```
 
 Make submission
 ---------------
 
-Now run the following script. The script will create a submission file. It 
-could take around 1 hour depending on how many interations you perform. The
-network can train at around 5k images a second.
+Now run the following script. The script will create a submission file.
+Change the folder locations in the script to point to your new morphological
+dataset locations, and to the unzipped sampleSubmission.csv
 
 ```
 python make_submission.py
