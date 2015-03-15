@@ -39,5 +39,3 @@ for img in imgs:
     md += fo + img
     os.system(md)
 
-    #print md
-    os.system(md)
