@@ -11,7 +11,7 @@ based on CXXNet.
 This attempt is a modified version of https://github.com/srikris/datascience-bowl.
 https://github.com/srikris/datascience-bowl achieved a Public Leaderboard score of 0.93.
 
-* **Setup time**: ~40 mins
+* **Setup time**: ~30 mins
 * **Train and submit creation time**: ~3 hours 40 mins on a GRID K520 GPU
 * **Validation score**: 0.84 (72%)
 * **Public Leaderboard score**: 0.85
@@ -74,7 +74,7 @@ Train dataset creation: 5 minutes
 python gen_train.py
 ```
 
-Test dataset creation: 35 minutes
+Test dataset creation: 25 minutes
 ```
 python gen_test.py
 ```
