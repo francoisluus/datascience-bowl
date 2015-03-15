@@ -11,7 +11,7 @@ from skimage.morphology import black_tophat, white_tophat, disk
 fi = "/data/Kaggle-National_Data_Science_Bowl/Data/test/"
 fo = "/data/Kaggle-National_Data_Science_Bowl/Data_morph/test/"
 
-cmd = " -resize 64x64 -gravity center -background white -extent 64x64 "
+cmd = " -resize 64x64 -gravity center -background white -extent 64x64 PNG24:"
 
 try:
     os.mkdir(fo)
@@ -33,9 +33,9 @@ for img in imgs:
     img_out[:, :, 1] = img_btop
     img_out[:, :, 2] = img_wtop
 
-    io.imsave("/dev/shm/test_tmp.jpg", img_out)
+    io.imsave("/dev/shm/test_tmp.png", img_out)
 
-    md = "convert /dev/shm/test_tmp.jpg" + cmd
-    md += fo + img
+    md = "convert /dev/shm/test_tmp.png" + cmd
+    md += fo + img + ".png"
     os.system(md)
 

@@ -12,7 +12,7 @@ fi = "/data/Kaggle-National_Data_Science_Bowl/Data/train/"
 fr = "/data/Kaggle-National_Data_Science_Bowl/Data_morph/"
 fo = "/data/Kaggle-National_Data_Science_Bowl/Data_morph/train/"
 
-cmd = " -resize 64x64 -gravity center -background white -extent 64x64 "
+cmd = " -resize 64x64 -gravity center -background white -extent 64x64 PNG24:"
 
 try:
     os.mkdir(fr)
@@ -47,9 +47,9 @@ for cls in classes:
         img_out[:, :, 1] = img_btop
         img_out[:, :, 2] = img_wtop
 
-        io.imsave("/dev/shm/train_tmp.jpg", img_out)
+        io.imsave("/dev/shm/train_tmp.png", img_out)
 
-        md = "convert /dev/shm/train_tmp.jpg" + cmd
-        md += fo + cls + "/" + img
+        md = "convert /dev/shm/train_tmp.png" + cmd
+        md += fo + cls + "/" + img + ".png"
         os.system(md)
 
