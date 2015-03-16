@@ -36,7 +36,7 @@ def make_submission(model, test):
     Make a submission in the format as asked by Kaggle.
     """
     # Setup the data
-    preds = gl.SFrame({'image': test['path'].apply(lambda x: x.split('/')[-1])})
+    preds = gl.SFrame({'image': test['path'].apply(lambda x: x.split('/')[-1].rsplit(".", 1)[0])})
     preds = preds.add_row_number('row_id')
 
     # Get an averaged prediction
