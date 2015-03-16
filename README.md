@@ -13,8 +13,8 @@ https://github.com/srikris/datascience-bowl achieved a Public Leaderboard score 
 
 * **Setup time**: ~30 mins
 * **Train and submit creation time**: ~3 hours 40 mins on a GRID K520 GPU
-* **Validation score**: 0.775 (74.8%)
-* **Public Leaderboard score**: 0.85
+* **Validation score**: 0.774 (74.8%)
+* **Public Leaderboard score**: 0.775
 
 
 Solution
